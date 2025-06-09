@@ -1,0 +1,65 @@
+[debug] [2024-10-22T18:18:01.131Z] ----------------------------------------------------------------------
+[debug] [2024-10-22T18:18:01.136Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2024-10-22T18:18:01.137Z] CLI Version:   13.17.0
+[debug] [2024-10-22T18:18:01.137Z] Platform:      win32
+[debug] [2024-10-22T18:18:01.137Z] Node Version:  v20.17.0
+[debug] [2024-10-22T18:18:01.138Z] Time:          Tue Oct 22 2024 23:48:01 GMT+0530 (India Standard Time)
+[debug] [2024-10-22T18:18:01.138Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-22T18:18:01.287Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-22T18:18:01.288Z] > authorizing via signed-in user (D41239150-c@adtalem.com)
+[debug] [2024-10-22T18:18:01.288Z] [iam] checking project dev-wu-pcor-app-proj for permissions ["firebase.projects.get"]
+[debug] [2024-10-22T18:18:01.292Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions [none]
+[debug] [2024-10-22T18:18:01.293Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions x-goog-quota-user=projects/dev-wu-pcor-app-proj
+[debug] [2024-10-22T18:18:01.293Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-22T18:18:02.965Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions 200
+[debug] [2024-10-22T18:18:02.966Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-22T18:18:02.968Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj [none]
+[debug] [2024-10-22T18:18:03.857Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj 200
+[debug] [2024-10-22T18:18:03.857Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj {"projectId":"dev-wu-pcor-app-proj","projectNumber":"718370425145","displayName":"dev-wu-pcor-app-proj","name":"projects/dev-wu-pcor-app-proj","resources":{"hostingSite":"dev-wu-pcor-app-proj","storageBucket":"dev-wu-pcor-app-proj.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_eeaf2778-816e-4445-8133-724dc9b1a8fa"}
+[debug] [2024-10-22T18:18:03.861Z] defaultcredentials: writing to file C:\Users\linoy.gopal\AppData\Roaming\firebase\D41239150-c_adtalem_com_application_default_credentials.json
+[debug] [2024-10-22T18:18:03.863Z] Setting GAC to C:\Users\linoy.gopal\AppData\Roaming\firebase\D41239150-c_adtalem_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\linoy.gopal\\AppData\\Roaming\\firebase\\D41239150-c_adtalem_com_application_default_credentials.json"}}
+[debug] [2024-10-22T18:18:03.864Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj/adminSdkConfig [none]
+[debug] [2024-10-22T18:18:05.311Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj/adminSdkConfig 200
+[debug] [2024-10-22T18:18:05.311Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj/adminSdkConfig {"projectId":"dev-wu-pcor-app-proj","storageBucket":"dev-wu-pcor-app-proj.appspot.com","locationId":"us-central"}
+[debug] [2024-10-22T18:18:05.331Z] Error: listen EADDRINUSE: address already in use ::1:5000
+    at Server.setupListenHandle [as _listen2] (node:net:1904:16)
+    at listenInCluster (node:net:1961:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (node:net:2135:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8)
+[error] 
+[error] Error: An unexpected error has occurred.
+[info] i  functions: Watching "D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\" for Cloud Functions..."}}
+[debug] [2024-10-22T18:18:05.347Z] Validating nodejs source
+[debug] [2024-10-22T18:18:34.720Z] ----------------------------------------------------------------------
+[debug] [2024-10-22T18:18:34.725Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2024-10-22T18:18:34.725Z] CLI Version:   13.17.0
+[debug] [2024-10-22T18:18:34.726Z] Platform:      win32
+[debug] [2024-10-22T18:18:34.726Z] Node Version:  v20.17.0
+[debug] [2024-10-22T18:18:34.726Z] Time:          Tue Oct 22 2024 23:48:34 GMT+0530 (India Standard Time)
+[debug] [2024-10-22T18:18:34.726Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-22T18:18:34.858Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-22T18:18:34.859Z] > authorizing via signed-in user (D41239150-c@adtalem.com)
+[debug] [2024-10-22T18:18:34.859Z] [iam] checking project dev-wu-pcor-app-proj for permissions ["firebase.projects.get"]
+[debug] [2024-10-22T18:18:34.863Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions [none]
+[debug] [2024-10-22T18:18:34.863Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions x-goog-quota-user=projects/dev-wu-pcor-app-proj
+[debug] [2024-10-22T18:18:34.863Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-22T18:18:36.339Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions 200
+[debug] [2024-10-22T18:18:36.340Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-22T18:18:36.341Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj [none]
+[debug] [2024-10-22T18:18:37.112Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj 200
+[debug] [2024-10-22T18:18:37.112Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj {"projectId":"dev-wu-pcor-app-proj","projectNumber":"718370425145","displayName":"dev-wu-pcor-app-proj","name":"projects/dev-wu-pcor-app-proj","resources":{"hostingSite":"dev-wu-pcor-app-proj","storageBucket":"dev-wu-pcor-app-proj.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_eeaf2778-816e-4445-8133-724dc9b1a8fa"}
+[debug] [2024-10-22T18:18:37.118Z] defaultcredentials: writing to file C:\Users\linoy.gopal\AppData\Roaming\firebase\D41239150-c_adtalem_com_application_default_credentials.json
+[debug] [2024-10-22T18:18:37.120Z] Setting GAC to C:\Users\linoy.gopal\AppData\Roaming\firebase\D41239150-c_adtalem_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\linoy.gopal\\AppData\\Roaming\\firebase\\D41239150-c_adtalem_com_application_default_credentials.json"}}
+[debug] [2024-10-22T18:18:37.121Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj/adminSdkConfig [none]
+[debug] [2024-10-22T18:18:38.344Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj/adminSdkConfig 200
+[debug] [2024-10-22T18:18:38.344Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj/adminSdkConfig {"projectId":"dev-wu-pcor-app-proj","storageBucket":"dev-wu-pcor-app-proj.appspot.com","locationId":"us-central"}
+[debug] [2024-10-22T18:18:38.367Z] Error: listen EADDRINUSE: address already in use ::1:5000
+    at Server.setupListenHandle [as _listen2] (node:net:1904:16)
+    at listenInCluster (node:net:1961:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (node:net:2135:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8)
+[error] 
+[error] Error: An unexpected error has occurred.
+[info] i  functions: Watching "D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\" for Cloud Functions..."}}

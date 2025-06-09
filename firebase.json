@@ -1,0 +1,28 @@
+{
+  "functions": [
+    {
+      "source": "./functions",
+      "codebase": "default",
+      "ingressSettings": "ALLOW_ALL",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ],
+      "predeploy": [
+        
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ],
+      "rewrites":[
+        {
+          "source": "**/assess/**",
+          "function": "redFunction"
+        },
+        {
+          "source": "**/lead/**",
+          "function": "blueFunction"
+        }]
+    }
+  ]
+}

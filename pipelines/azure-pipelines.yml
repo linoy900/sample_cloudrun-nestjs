@@ -1,0 +1,78 @@
+trigger: none
+pr: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+  demands: npm
+
+parameters:  
+  - name: fuctions
+    displayName: "fuctions"
+    type: boolean
+    default: true
+
+stages:
+- stage: fuctions_Build
+  displayName: 'fuctions_Build'
+  jobs:
+  - job: Portal
+    displayName: 'fuctions Build'
+    steps:
+    - ${{ if eq(parameters.fuctions, true) }}:
+       - task: NodeTool@0
+         displayName: Install Node JS
+         inputs:
+          versionSpec: 20.16.0     
+       - task: Npm@1
+         displayName: Install Dependencies
+         inputs:
+           workingDir: $(System.DefaultWorkingDirectory)/functions/
+           verbose: false
+
+       - task: Npm@1
+         displayName: Build Application
+         inputs:
+           command: custom
+           workingDir: $(System.DefaultWorkingDirectory)/functions
+           customCommand: run build
+       - task: CopyFiles@2
+         displayName: Copy package.json
+         inputs:
+           SourceFolder: $(System.DefaultWorkingDirectory)/functions
+           Contents: |
+             package.json
+             tsconfig.json
+             tsconfig.build.json
+           TargetFolder: $(Build.ArtifactStagingDirectory)/functions
+       - task: CopyFiles@2
+         displayName: Copy dist/functions folder
+         inputs:
+           SourceFolder: $(System.DefaultWorkingDirectory)/functions/dist
+           Contents: "**"
+           TargetFolder: $(Build.ArtifactStagingDirectory)/functions/dist  
+       - task: CopyFiles@2
+         displayName: Copy firebase.json
+         inputs:
+           SourceFolder: $(System.DefaultWorkingDirectory)
+           Contents: |
+             firebase 
+             firebase.json 
+           TargetFolder: $(Build.ArtifactStagingDirectory)   
+       - task: DownloadSecureFile@1
+         displayName: download .env file from secure files
+         inputs:
+           secureFile: backend-config-dev.env
+       - task: Bash@3
+         displayName: Rename to .env and copy data folder to target
+         inputs:
+           targetType: inline
+           script: |
+             mv $(Agent.TempDirectory)/backend-config-dev.env $(Build.ArtifactStagingDirectory)/functions/.env    
+             echo "Copying folder..."
+             cp -R $(System.DefaultWorkingDirectory)/functions/data $(Build.ArtifactStagingDirectory)/functions
+       - task: PublishBuildArtifacts@1
+         displayName: Publish functions artifact
+         inputs:
+           ArtifactName: functions_artifact
+            
+

@@ -1,0 +1,886 @@
+[debug] [2025-05-30T12:25:16.611Z] ----------------------------------------------------------------------
+[debug] [2025-05-30T12:25:16.616Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2025-05-30T12:25:16.617Z] CLI Version:   13.17.0
+[debug] [2025-05-30T12:25:16.618Z] Platform:      win32
+[debug] [2025-05-30T12:25:16.618Z] Node Version:  v20.17.0
+[debug] [2025-05-30T12:25:16.618Z] Time:          Fri May 30 2025 17:55:16 GMT+0530 (India Standard Time)
+[debug] [2025-05-30T12:25:16.618Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-30T12:25:16.913Z] Field ".functions" in "firebase.json" is possibly invalid: should be object
+[debug] [2025-05-30T12:25:16.915Z] Object ".functions[0]" in "firebase.json" has unknown property: {"additionalProperty":"ingressSettings"}
+[debug] [2025-05-30T12:25:16.915Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2025-05-30T12:25:16.930Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-05-30T12:25:16.931Z] > authorizing via signed-in user (D41239150-c@adtalem.com)
+[debug] [2025-05-30T12:25:16.932Z] [iam] checking project dev-wu-pcor-app-proj for permissions ["firebase.projects.get"]
+[debug] [2025-05-30T12:25:16.936Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions [none]
+[debug] [2025-05-30T12:25:16.937Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions x-goog-quota-user=projects/dev-wu-pcor-app-proj
+[debug] [2025-05-30T12:25:16.937Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-05-30T12:25:18.336Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions 200
+[debug] [2025-05-30T12:25:18.339Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-05-30T12:25:18.345Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj [none]
+[debug] [2025-05-30T12:25:18.942Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj 200
+[debug] [2025-05-30T12:25:18.947Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj {"projectId":"dev-wu-pcor-app-proj","projectNumber":"718370425145","displayName":"dev-wu-pcor-app-proj","name":"projects/dev-wu-pcor-app-proj","resources":{"hostingSite":"dev-wu-pcor-app-proj","locationId":"us-central"},"state":"ACTIVE","etag":"1_eeaf2778-816e-4445-8133-724dc9b1a8fa"}
+[debug] [2025-05-30T12:25:18.960Z] defaultcredentials: writing to file C:\Users\linoy.gopal\AppData\Roaming\firebase\D41239150-c_adtalem_com_application_default_credentials.json
+[debug] [2025-05-30T12:25:18.969Z] Setting GAC to C:\Users\linoy.gopal\AppData\Roaming\firebase\D41239150-c_adtalem_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\linoy.gopal\\AppData\\Roaming\\firebase\\D41239150-c_adtalem_com_application_default_credentials.json"}}
+[debug] [2025-05-30T12:25:18.975Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj/adminSdkConfig [none]
+[debug] [2025-05-30T12:25:20.263Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj/adminSdkConfig 200
+[debug] [2025-05-30T12:25:20.265Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj/adminSdkConfig {"projectId":"dev-wu-pcor-app-proj","storageBucket":"dev-wu-pcor-app-proj.appspot.com","locationId":"us-central"}
+[info] i  functions: Watching "D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\" for Cloud Functions..."}}
+[debug] [2025-05-30T12:25:20.373Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-05-30T12:25:27.029Z] > [functions] package.json contents: {
+  "name": "pcor_backend",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "serve": "npm run build && firebase serve --only functions",
+    "deploy": "firebase deploy --only functions",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" ",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.4.1",
+    "@nestjs/config": "^3.2.3",
+    "@nestjs/core": "^10.4.1",
+    "@nestjs/platform-express": "^10.4.1",
+    "@nestjs/swagger": "^7.4.0",
+    "@nestjs/throttler": "^6.2.1",
+    "@types/helmet": "^4.0.0",
+    "axios": "^1.7.7",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "csv-parser": "^3.0.0",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.1.1",
+    "helmet": "^7.1.0",
+    "qrcode": "^1.5.4",
+    "reflect-metadata": "^0.2.0",
+    "rxjs": "^7.8.1",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.5",
+    "@nestjs/schematics": "^10.1.4",
+    "@nestjs/testing": "^10.4.1",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^20.16.5",
+    "@types/supertest": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.5.0",
+    "prettier": "^3.0.0",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.4.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.1.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "dist/main.js"
+}
+[debug] [2025-05-30T12:25:27.031Z] Building nodejs source
+[debug] [2025-05-30T12:25:27.034Z] Failed to find version of module node: reached end of search path D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\node_modules
+[info] +  functions: Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-05-30T12:25:27.057Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-30T12:25:27.083Z] Found firebase-functions binary at 'D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8998
+
+[info] LINOYsd==
+
+[info] Singleton initialized
+sd
+hi
+hi
+true
+
+[debug] [2025-05-30T12:25:31.653Z] Got response from /__/functions.yaml {"endpoints":{"redFunction":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"redFunction"},"blueFunction":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"blueFunction"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] +  functions: Loaded functions definitions from source: redFunction, blueFunction. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: redFunction, blueFunction."}}
+[info] +  functions[us-central1-redFunction]: http function initialized (http://localhost:5000/dev-wu-pcor-app-proj/us-central1/redFunction). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5000/dev-wu-pcor-app-proj/us-central1/redFunction)."}}
+[info] +  functions[us-central1-blueFunction]: http function initialized (http://localhost:5000/dev-wu-pcor-app-proj/us-central1/blueFunction). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5000/dev-wu-pcor-app-proj/us-central1/blueFunction)."}}
+[debug] [2025-05-30T16:18:02.019Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\main.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\main.ts changed, reloading triggers"}}
+[debug] [2025-05-30T16:18:02.071Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\main.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\main.ts changed, reloading triggers"}}
+[debug] [2025-05-30T16:18:03.126Z] Validating nodejs source
+[debug] [2025-05-30T16:18:13.480Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\WINDOWS\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1124:20)
+    at Object.spawnSync (node:child_process:877:24)
+    at Function.spawnSync [as sync] (C:\Users\linoy.gopal\AppData\Roaming\nvm\v20.17.0\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\linoy.gopal\AppData\Roaming\nvm\v20.17.0\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\linoy.gopal\AppData\Roaming\nvm\v20.17.0\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\linoy.gopal\AppData\Roaming\nvm\v20.17.0\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:85:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\linoy.gopal\AppData\Roaming\nvm\v20.17.0\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:303:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\linoy.gopal\AppData\Roaming\nvm\v20.17.0\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:339:34)
+[debug] [2025-05-30T16:18:13.528Z] > [functions] package.json contents: {
+  "name": "pcor_backend",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "serve": "npm run build && firebase serve --only functions",
+    "deploy": "firebase deploy --only functions",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" ",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.4.1",
+    "@nestjs/config": "^3.2.3",
+    "@nestjs/core": "^10.4.1",
+    "@nestjs/platform-express": "^10.4.1",
+    "@nestjs/swagger": "^7.4.0",
+    "@nestjs/throttler": "^6.2.1",
+    "@types/helmet": "^4.0.0",
+    "axios": "^1.7.7",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "csv-parser": "^3.0.0",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.1.1",
+    "helmet": "^7.1.0",
+    "qrcode": "^1.5.4",
+    "reflect-metadata": "^0.2.0",
+    "rxjs": "^7.8.1",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.5",
+    "@nestjs/schematics": "^10.1.4",
+    "@nestjs/testing": "^10.4.1",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^20.16.5",
+    "@types/supertest": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.5.0",
+    "prettier": "^3.0.0",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.4.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.1.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "dist/main.js"
+}
+[debug] [2025-05-30T16:18:13.531Z] Building nodejs source
+[debug] [2025-05-30T16:18:13.532Z] Failed to find version of module node: reached end of search path D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\node_modules
+[info] +  functions: Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-05-30T16:18:13.709Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-30T16:18:13.758Z] Found firebase-functions binary at 'D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8573
+
+[info] LINOYsd==
+
+[info] Singleton initialized
+sd
+hi
+hi
+true
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[debug] [2025-05-30T16:20:08.254Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\main.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\main.ts changed, reloading triggers"}}
+[debug] [2025-05-30T16:20:09.268Z] Validating nodejs source
+[debug] [2025-05-30T16:20:12.541Z] checkFunctionsSDKVersion encountered error: Unexpected token 'T', "Terminate "... is not valid JSON {}
+[debug] [2025-05-30T16:20:12.544Z] > [functions] package.json contents: {
+  "name": "pcor_backend",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "serve": "npm run build && firebase serve --only functions",
+    "deploy": "firebase deploy --only functions",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" ",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.4.1",
+    "@nestjs/config": "^3.2.3",
+    "@nestjs/core": "^10.4.1",
+    "@nestjs/platform-express": "^10.4.1",
+    "@nestjs/swagger": "^7.4.0",
+    "@nestjs/throttler": "^6.2.1",
+    "@types/helmet": "^4.0.0",
+    "axios": "^1.7.7",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "csv-parser": "^3.0.0",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.1.1",
+    "helmet": "^7.1.0",
+    "qrcode": "^1.5.4",
+    "reflect-metadata": "^0.2.0",
+    "rxjs": "^7.8.1",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.5",
+    "@nestjs/schematics": "^10.1.4",
+    "@nestjs/testing": "^10.4.1",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^20.16.5",
+    "@types/supertest": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.5.0",
+    "prettier": "^3.0.0",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.4.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.1.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "dist/main.js"
+}
+[debug] [2025-05-30T16:20:12.546Z] Building nodejs source
+[debug] [2025-05-30T16:20:12.547Z] Failed to find version of module node: reached end of search path D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\node_modules
+[info] +  functions: Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[info] Shutting down...
+[debug] [2025-05-30T16:20:12.724Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-30T16:20:12.738Z] Found firebase-functions binary at 'D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8758
+
+[info] LINOYsd==
+
+[info] Singleton initialized
+sd
+hi
+hi
+true
+
+[debug] [2025-05-30T16:20:20.388Z] Got response from /__/functions.yaml {"endpoints":{"redFunction":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"redFunction"},"blueFunction":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"blueFunction"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-30T16:20:22.749Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\linoy.gopal\AppData\Roaming\nvm\v20.17.0\node_modules\firebase-tools\lib\utils.js:268:49)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-05-30T16:23:36.207Z] ----------------------------------------------------------------------
+[debug] [2025-05-30T16:23:36.212Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2025-05-30T16:23:36.213Z] CLI Version:   13.17.0
+[debug] [2025-05-30T16:23:36.213Z] Platform:      win32
+[debug] [2025-05-30T16:23:36.214Z] Node Version:  v20.17.0
+[debug] [2025-05-30T16:23:36.214Z] Time:          Fri May 30 2025 21:53:36 GMT+0530 (India Standard Time)
+[debug] [2025-05-30T16:23:36.214Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-30T16:23:36.442Z] Field ".functions" in "firebase.json" is possibly invalid: should be object
+[debug] [2025-05-30T16:23:36.443Z] Object ".functions[0]" in "firebase.json" has unknown property: {"additionalProperty":"ingressSettings"}
+[debug] [2025-05-30T16:23:36.443Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2025-05-30T16:23:36.453Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-05-30T16:23:36.454Z] > authorizing via signed-in user (D41239150-c@adtalem.com)
+[debug] [2025-05-30T16:23:36.454Z] [iam] checking project dev-wu-pcor-app-proj for permissions ["firebase.projects.get"]
+[debug] [2025-05-30T16:23:36.456Z] > refreshing access token with scopes: []
+[debug] [2025-05-30T16:23:36.459Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-05-30T16:23:36.459Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-05-30T16:23:36.898Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-05-30T16:23:36.899Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-05-30T16:23:36.941Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions [none]
+[debug] [2025-05-30T16:23:36.941Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions x-goog-quota-user=projects/dev-wu-pcor-app-proj
+[debug] [2025-05-30T16:23:36.942Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-05-30T16:23:38.504Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions 200
+[debug] [2025-05-30T16:23:38.505Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dev-wu-pcor-app-proj:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-05-30T16:23:38.507Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj [none]
+[debug] [2025-05-30T16:23:50.413Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj 200
+[debug] [2025-05-30T16:23:50.414Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj {"projectId":"dev-wu-pcor-app-proj","projectNumber":"718370425145","displayName":"dev-wu-pcor-app-proj","name":"projects/dev-wu-pcor-app-proj","resources":{"hostingSite":"dev-wu-pcor-app-proj","locationId":"us-central"},"state":"ACTIVE","etag":"1_eeaf2778-816e-4445-8133-724dc9b1a8fa"}
+[debug] [2025-05-30T16:23:50.424Z] defaultcredentials: writing to file C:\Users\linoy.gopal\AppData\Roaming\firebase\D41239150-c_adtalem_com_application_default_credentials.json
+[debug] [2025-05-30T16:23:50.427Z] Setting GAC to C:\Users\linoy.gopal\AppData\Roaming\firebase\D41239150-c_adtalem_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\linoy.gopal\\AppData\\Roaming\\firebase\\D41239150-c_adtalem_com_application_default_credentials.json"}}
+[debug] [2025-05-30T16:23:50.430Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj/adminSdkConfig [none]
+[debug] [2025-05-30T16:23:51.689Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj/adminSdkConfig 200
+[debug] [2025-05-30T16:23:51.691Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dev-wu-pcor-app-proj/adminSdkConfig {"projectId":"dev-wu-pcor-app-proj","storageBucket":"dev-wu-pcor-app-proj.appspot.com","locationId":"us-central"}
+[info] i  functions: Watching "D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\" for Cloud Functions..."}}
+[debug] [2025-05-30T16:23:51.729Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-05-30T16:23:59.631Z] > [functions] package.json contents: {
+  "name": "pcor_backend",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "serve": "npm run build && firebase serve --only functions",
+    "deploy": "firebase deploy --only functions",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" ",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.4.1",
+    "@nestjs/config": "^3.2.3",
+    "@nestjs/core": "^10.4.1",
+    "@nestjs/platform-express": "^10.4.1",
+    "@nestjs/swagger": "^7.4.0",
+    "@nestjs/throttler": "^6.2.1",
+    "@types/helmet": "^4.0.0",
+    "axios": "^1.7.7",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "csv-parser": "^3.0.0",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.1.1",
+    "helmet": "^7.1.0",
+    "qrcode": "^1.5.4",
+    "reflect-metadata": "^0.2.0",
+    "rxjs": "^7.8.1",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.5",
+    "@nestjs/schematics": "^10.1.4",
+    "@nestjs/testing": "^10.4.1",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^20.16.5",
+    "@types/supertest": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.5.0",
+    "prettier": "^3.0.0",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.4.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.1.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "dist/main.js"
+}
+[debug] [2025-05-30T16:23:59.632Z] Building nodejs source
+[debug] [2025-05-30T16:23:59.634Z] Failed to find version of module node: reached end of search path D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\node_modules
+[info] +  functions: Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-05-30T16:23:59.764Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-30T16:23:59.800Z] Found firebase-functions binary at 'D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8602
+
+[info] LINOYsd==
+
+[info] Singleton initialized
+sd
+hi
+hi
+true
+sd---singleton_n
+Say hellow
+Say hellow
+true
+
+[debug] [2025-05-30T16:24:06.641Z] Got response from /__/functions.yaml {"endpoints":{"redFunction":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"redFunction"},"blueFunction":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"blueFunction"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] +  functions: Loaded functions definitions from source: redFunction, blueFunction. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: redFunction, blueFunction."}}
+[info] +  functions[us-central1-redFunction]: http function initialized (http://localhost:5000/dev-wu-pcor-app-proj/us-central1/redFunction). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5000/dev-wu-pcor-app-proj/us-central1/redFunction)."}}
+[info] +  functions[us-central1-blueFunction]: http function initialized (http://localhost:5000/dev-wu-pcor-app-proj/us-central1/blueFunction). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5000/dev-wu-pcor-app-proj/us-central1/blueFunction)."}}
+[debug] [2025-06-02T13:36:33.456Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\main.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\main.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:36:34.633Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-06-02T13:36:40.968Z] > [functions] package.json contents: {
+  "name": "pcor_backend",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "serve": "npm run build && firebase serve --only functions",
+    "deploy": "firebase deploy --only functions",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" ",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.4.1",
+    "@nestjs/config": "^3.2.3",
+    "@nestjs/core": "^10.4.1",
+    "@nestjs/platform-express": "^10.4.1",
+    "@nestjs/swagger": "^7.4.0",
+    "@nestjs/throttler": "^6.2.1",
+    "@types/helmet": "^4.0.0",
+    "axios": "^1.7.7",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "csv-parser": "^3.0.0",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.1.1",
+    "helmet": "^7.1.0",
+    "qrcode": "^1.5.4",
+    "reflect-metadata": "^0.2.0",
+    "rxjs": "^7.8.1",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.5",
+    "@nestjs/schematics": "^10.1.4",
+    "@nestjs/testing": "^10.4.1",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^20.16.5",
+    "@types/supertest": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.5.0",
+    "prettier": "^3.0.0",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.4.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.1.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "dist/main.js"
+}
+[debug] [2025-06-02T13:36:40.969Z] Building nodejs source
+[debug] [2025-06-02T13:36:40.971Z] Failed to find version of module node: reached end of search path D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\node_modules
+[info] +  functions: Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-06-02T13:36:41.011Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-06-02T13:36:41.055Z] Found firebase-functions binary at 'D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8087
+
+[info] LINOYsd==
+
+[info] Singleton initialized
+sd
+hi
+hi
+true
+sd---singleton_n
+Say hellow
+Say hellow
+true
+
+[debug] [2025-06-02T13:36:57.652Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\data\questions_and_options.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\data\\questions_and_options.json changed, reloading triggers"}}
+[debug] [2025-06-02T13:36:57.711Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\package-lock.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\package-lock.json changed, reloading triggers"}}
+[debug] [2025-06-02T13:36:57.717Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\app.assessment.module.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\app.assessment.module.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:36:57.730Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\app.leadgeneration.module.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\app.leadgeneration.module.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:36:57.739Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\package.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\package.json changed, reloading triggers"}}
+[debug] [2025-06-02T13:36:57.746Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\app.module.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\app.module.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:36:57.759Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\assessment\assessment.controller.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\assessment\\assessment.controller.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:36:58.316Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\lead-generation\lead-generation.controller.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\lead-generation\\lead-generation.controller.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:36:58.383Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\main.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\main.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:36:58.384Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\lead-generation\lead-generation.module.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\lead-generation\\lead-generation.module.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:36:58.397Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\lead-generation\lead-generation.controller.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\lead-generation\\lead-generation.controller.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:36:59.408Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-06-02T13:37:03.325Z] > [functions] package.json contents: {
+  "name": "pcor_backend",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "serve": "npm run build && firebase serve --only functions",
+    "deploy": "firebase deploy --only functions",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" ",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@google-cloud/bigquery": "^7.9.1",
+    "@google-cloud/storage": "^7.14.0",
+    "@nestjs/common": "^10.4.7",
+    "@nestjs/config": "^3.3.0",
+    "@nestjs/core": "^10.4.7",
+    "@nestjs/platform-express": "^10.4.7",
+    "@nestjs/swagger": "^7.4.2",
+    "@nestjs/throttler": "^6.2.1",
+    "@types/helmet": "^4.0.0",
+    "@types/qrcode": "^1.5.5",
+    "axios": "^1.7.7",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "cookie-parser": "^1.4.7",
+    "csurf": "^1.11.0",
+    "csv-parser": "^3.0.0",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^5.1.1",
+    "helmet": "^7.2.0",
+    "node-cache": "^5.1.2",
+    "qrcode": "^1.5.4",
+    "reflect-metadata": "^0.2.0",
+    "rxjs": "^7.8.1",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.7",
+    "@nestjs/schematics": "^10.2.3",
+    "@nestjs/testing": "^10.4.7",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.17.6",
+    "@types/node-cache": "^4.1.3",
+    "@types/supertest": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.5.0",
+    "prettier": "^3.0.0",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.4.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.1.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "dist/index.js"
+}
+[error] !!  functions: Failed to load function definition from source: FirebaseError: There was an error reading pcor_functions\package.json:
+
+ pcor_functions\dist\index.js does not exist, can't deploy Cloud Functions {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: There was an error reading pcor_functions\\package.json:\n\n pcor_functions\\dist\\index.js does not exist, can't deploy Cloud Functions"}}
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[debug] [2025-06-02T13:55:43.010Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\data\questions_and_options.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\data\\questions_and_options.json changed, reloading triggers"}}
+[debug] [2025-06-02T13:55:43.013Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\package-lock.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\package-lock.json changed, reloading triggers"}}
+[debug] [2025-06-02T13:55:43.034Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\app.assessment.module.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\app.assessment.module.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:55:43.053Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\app.leadgeneration.module.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\app.leadgeneration.module.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:55:43.054Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\app.module.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\app.module.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:55:43.059Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\assessment\assessment.controller.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\assessment\\assessment.controller.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:55:43.082Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\lead-generation\lead-generation.controller.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\lead-generation\\lead-generation.controller.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:55:43.084Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\main.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\main.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:55:43.086Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\assessment\assessment.module.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\assessment\\assessment.module.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:55:43.109Z] File D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\src\lead-generation\lead-generation.module.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\projects\\PCOR\\pcor_bacend_adtalem\\atge-pcor-backend\\pcor_functions\\src\\lead-generation\\lead-generation.module.ts changed, reloading triggers"}}
+[debug] [2025-06-02T13:55:44.129Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-06-02T13:55:48.683Z] > [functions] package.json contents: {
+  "name": "pcor_backend",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "serve": "npm run build && firebase serve --only functions",
+    "deploy": "firebase deploy --only functions",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" ",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.4.1",
+    "@nestjs/config": "^3.2.3",
+    "@nestjs/core": "^10.4.1",
+    "@nestjs/platform-express": "^10.4.1",
+    "@nestjs/swagger": "^7.4.0",
+    "@nestjs/throttler": "^6.2.1",
+    "@types/helmet": "^4.0.0",
+    "axios": "^1.7.7",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "csv-parser": "^3.0.0",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.1.1",
+    "helmet": "^7.1.0",
+    "qrcode": "^1.5.4",
+    "reflect-metadata": "^0.2.0",
+    "rxjs": "^7.8.1",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.5",
+    "@nestjs/schematics": "^10.1.4",
+    "@nestjs/testing": "^10.4.1",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^20.16.5",
+    "@types/supertest": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.5.0",
+    "prettier": "^3.0.0",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.4.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.1.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "dist/main.js"
+}
+[debug] [2025-06-02T13:55:48.684Z] Building nodejs source
+[debug] [2025-06-02T13:55:48.685Z] Failed to find version of module node: reached end of search path D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\node_modules
+[info] +  functions: Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-06-02T13:55:48.709Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-06-02T13:55:48.730Z] Found firebase-functions binary at 'D:\projects\PCOR\pcor_bacend_adtalem\atge-pcor-backend\pcor_functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8298
+
+[info] LINOYsd==
+
+[info] Singleton initialized
+sd
+hi
+hi
+true
+sd---singleton_n
+Say hellow
+Say hellow
+true
+
+[debug] [2025-06-02T13:55:57.464Z] Got response from /__/functions.yaml {"endpoints":{"redFunction":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"redFunction"},"blueFunction":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"blueFunction"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] +  functions: Loaded functions definitions from source: redFunction, blueFunction. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: redFunction, blueFunction."}}
